@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(express.json())
 
-moongoose.connect( process.env.MONGO_URL )
+moongoose.connect( process.env.MONGO_URI )
 
 const db = moongoose.connection
 db.on('error', console.error.bind(console, 'Error en conectarse a Mongo :( '))
