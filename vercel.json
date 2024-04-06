@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "frontend/package.json", "use": "@vercel/static-build" },
+      { "src": "backend/server.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/personas", "dest": "backend/server.js" },
+      { "src": "/(.*)", "dest": "frontend/$1" }
+    ],
+    "env": {
+      "MONGO_URL": "@mongo-url"
+    }
+  }
+  
